@@ -4,6 +4,8 @@ pipeline {
         stage("clone"){
             steps{
                 println "here we clone code"
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[ url: 'https://github.com/powerstar101/boxfuse-sample-java-war-hello.git']]])
+                sh "ls -lart ./*"
             }
 
         }
@@ -17,7 +19,7 @@ pipeline {
         stage("upload artifacts"){
             steps{
                 println "here we upload artifacts"
-            }
+               }
 
 
         }
