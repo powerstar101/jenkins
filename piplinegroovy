@@ -23,7 +23,8 @@ pipeline {
             steps{
                 println "here we upload artifacts"
                 sh """
-                aws s3 cp target/hello-*.war s3://jenkins101/$branch/$BUILD_NUMBER/
+                echo 'Pulling...' + env.BRANCH_NAME
+                aws s3 cp target/hello-*.war s3://jenkins101/$GIT_BRANCH/$BUILD_NUMBER/
                 aws s3 ls s3://jenkins101
                 
                 """
