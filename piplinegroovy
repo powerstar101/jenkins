@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    stages{
+        stage("clone"){
+            step{
+                println "here we clone code"
+            }
+
+        }
+        stage("build"){
+            step{
+                println "here we build code"
+            }
+
+
+        }
+        stage("upload artifacts"){
+            step{
+                println "here we upload artifacts"
+            }
+
+
+        }
+        stage("deploy"){
+            step{
+                println "here we deploy artifacts"
+            }
+
+
+        }
+    }
+}
